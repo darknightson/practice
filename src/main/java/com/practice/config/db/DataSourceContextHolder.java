@@ -1,6 +1,6 @@
-package com.securityexample.config.db;
+package com.practice.config.db;
 
-import com.securityexample.enums.DbType;
+import com.practice.enums.DbType;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j

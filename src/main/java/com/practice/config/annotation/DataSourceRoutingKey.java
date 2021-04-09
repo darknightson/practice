@@ -1,6 +1,6 @@
-package com.securityexample.config.annotation;
+package com.practice.config.annotation;
 
-import com.securityexample.enums.DbType;
+import com.practice.enums.DbType;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

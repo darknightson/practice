@@ -1,7 +1,7 @@
-package com.securityexample.config.db;
+package com.practice.config.db;
 
-import com.securityexample.config.annotation.DataSourceRoutingKey;
-import com.securityexample.enums.DbType;
+import com.practice.config.annotation.DataSourceRoutingKey;
+import com.practice.enums.DbType;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -14,7 +14,7 @@ import java.lang.reflect.Method;
 @Component
 @Aspect
 public class DataSourceAspect {
-    @Pointcut("execution(public * com.securityexample..service..*Service.*(..)) " + "&& @annotation(com.securityexample.config.annotation.DataSourceRoutingKey)")
+    @Pointcut("execution(public * com.practice..service..*Service.*(..)) " + "&& @annotation(com.practice.config.annotation.DataSourceRoutingKey)")
     public void dataSourcePointcut() {
     }
 

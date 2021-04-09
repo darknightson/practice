@@ -1,6 +1,6 @@
-package com.securityexample.config.db;
+package com.practice.config.db;
 
-import com.securityexample.enums.DbType;
+import com.practice.enums.DbType;
 import com.zaxxer.hikari.HikariDataSource;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;

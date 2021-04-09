@@ -1,4 +1,4 @@
-package com.securityexample.config.db;
+package com.practice.config.db;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;

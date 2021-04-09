@@ -1,4 +1,4 @@
-package com.securityexample.enums;
+package com.practice.enums;
 
 public enum DbType {
       MLB
