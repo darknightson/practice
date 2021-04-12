@@ -7,9 +7,12 @@ import lombok.*;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Account {
+public class AccountVo {
 
     private String userId;
-    private String password;
     private String username;
+    private String password;
+    private String email;
+    private String age;
+    private String role;
 }

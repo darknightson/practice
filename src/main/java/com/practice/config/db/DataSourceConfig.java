@@ -19,7 +19,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Configuration
-@MapperScan(basePackages = "com.securityexample.*")
+@MapperScan(basePackages = "com.practice.*")
 public class DataSourceConfig {
 
     private final ApplicationContext applicationContext;

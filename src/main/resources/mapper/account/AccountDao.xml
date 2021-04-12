@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.practice.account.dao.AccountDao">
+
+    <insert id="createUser" parameterType="com.practice.account.vo.AccountVo">
+        INSERT INTO USER_BASIC
+        (  USER_ID  , USER_NAME , PASSWORD,  EMAIL
+        ,  AGE      , ROLE )
+        VALUES
+        (  #{userId}, #{userName}, #{password}, #{email}
+        ,  #{age}   , #{role}
+        )
+    </insert>
+
+</mapper>
