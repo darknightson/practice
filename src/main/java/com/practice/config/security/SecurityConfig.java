@@ -20,7 +20,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         // 차후에 권한은 하이라키 형식으로 구성한다.
         http
                 .authorizeRequests()
-                .antMatchers("/").permitAll() // 루트 페이지는 모든 접속 권한 허용
+                .antMatchers("/", "/users").permitAll() // 루트 페이지는 모든 접속 권한 허용
                 .antMatchers("/mypage").hasRole("USER") // mypage 는 USER 권한만 허용
                 .antMatchers("/messages").hasRole("MANAGER") // message는 MANAGER 권한만 하용
                 .antMatchers("/config").hasRole("ADMIN") // config는 ADMIN 권한만 허용

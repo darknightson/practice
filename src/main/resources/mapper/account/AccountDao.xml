@@ -8,9 +8,10 @@
         (  USER_ID  , USER_NAME , PASSWORD,  EMAIL
         ,  AGE      , ROLE )
         VALUES
-        (  #{userId}, #{userName}, #{password}, #{email}
+        (  #{userId}, #{username}, #{password}, #{email}
         ,  #{age}   , #{role}
         )
     </insert>
+
 
 </mapper>
