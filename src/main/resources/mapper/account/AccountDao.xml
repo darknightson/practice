@@ -13,5 +13,17 @@
         )
     </insert>
 
+    <select id="selectUserId" parameterType="java.lang.String" resultType="com.practice.account.vo.AccountVo">
+
+        SELECT USER_ID
+             , USER_NAME
+             , PASSWORD
+             , EMAIL
+             , AGE
+             , ROLE
+          FROM USER_BASIC
+         WHERE USER_ID = #{userId}
+
+    </select>
 
 </mapper>
