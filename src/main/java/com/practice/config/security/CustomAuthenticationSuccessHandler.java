@@ -25,8 +25,9 @@ public class CustomAuthenticationSuccessHandler extends SimpleUrlAuthenticationS
             , Authentication authentication) throws IOException
             , ServletException {
         // 사용자가 마지막에 접속했던 URL
+        // 이 부분은 수정할 필요가 있다. ( 마지막 접속 URL을 전체적으로 손 봐야 한다. )
         SavedRequest saveRequest = requestCache.getRequest(request, response);
-        if ( saveRequest != null ) {
+        if ( saveRequest != null && !saveRequest.getRedirectUrl().contains("error")) {
             String targetUrl = saveRequest.getRedirectUrl();
             redirectStrategy.sendRedirect(request, response, targetUrl);
         }

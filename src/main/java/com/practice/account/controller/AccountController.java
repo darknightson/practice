@@ -24,30 +24,14 @@ public class AccountController {
     private final AccountService accountService;
     private final PasswordEncoder passwordEncoder;
 
-    @GetMapping("/login")
-    public String login(@RequestParam(value = "error", required = false) String error,
-                        @RequestParam(value = "exception", required = false) String exception, Model model) {
-        model.addAttribute("error", error);
-        model.addAttribute("exception", exception);
-        return "user/login/login";
-    }
 
-    @GetMapping("/logout")
-    public String logout(HttpServletRequest request, HttpServletResponse response) {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        if (authentication != null) {
-            new SecurityContextLogoutHandler().logout(request, response, authentication);
-        }
-        return "redirect:/login";
-    }
-
-    @GetMapping("/users")
-    public String createUserForm() {
+    @GetMapping("/account")
+    public String createAccountForm() {
         return "user/login/register";
     }
 
-    @PostMapping("/users")
-    public String createUser(AccountVo accountVo) {
+    @PostMapping("/account")
+    public String createAccount(AccountVo accountVo) {
         accountVo.setPassword(passwordEncoder.encode(accountVo.getPassword()));
         accountService.createUser(accountVo);
         return "redirect:/";

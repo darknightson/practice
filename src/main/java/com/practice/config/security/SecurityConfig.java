@@ -40,7 +40,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         // 차후에 권한은 하이라키 형식으로 구성한다.
         http
                 .authorizeRequests()
-                .antMatchers("/users", "/user/login/**", "/login*").permitAll() // 루트 페이지는 모든 접속 권한 허용
+                .antMatchers("/account", "/user/login/**", "/login*").permitAll() // 루트 페이지는 모든 접속 권한 허용
                 .antMatchers("/mypage").hasRole("USER") // mypage 는 USER 권한만 허용
                 .antMatchers("/messages").hasRole("MANAGER") // message는 MANAGER 권한만 하용
                 .antMatchers("/config").hasRole("ADMIN") // config는 ADMIN 권한만 허용
@@ -59,19 +59,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .accessDeniedHandler(customAccessDeniedHandler());
     }
 
-    @Bean
-    public AccessDeniedHandler customAccessDeniedHandler() {
-        CustomAccessDeniedHandler customAccessDeniedHandler = new CustomAccessDeniedHandler();
-        customAccessDeniedHandler.setErrorPage("/denied");
-        return customAccessDeniedHandler;
-    }
-
-    @Bean
-    public AuthenticationProvider authenticationProvider() {
-        return new CustomAuthenticationProvider();
-    }
-
-
     // webIgnore 설정
     // 정적인 자원들에 한해서 보안 검사를 하지 않는다.
     // permitAll() 과 유사해 보이지만, 보안 필터를 거치지 않는다.
@@ -80,23 +67,21 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         web.ignoring().requestMatchers(PathRequest.toStaticResources().atCommonLocations());
     }
 
-    /**
-     *
-     *
-     */
+    @Bean
+    public AuthenticationProvider authenticationProvider() {
+        return new CustomAuthenticationProvider();
+    }
+
     @Bean
     public PasswordEncoder passwordEncoder() {
         return PasswordEncoderFactories.createDelegatingPasswordEncoder();
     }
 
-
-    // 메모리 방식으로 사용자를 등록 테스트용
-//    @Override
-//    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-//        String password = passwordEncoder().encode("1111");
-//        auth.inMemoryAuthentication().withUser("user").password(password).roles("USER");
-//        auth.inMemoryAuthentication().withUser("manager").password(password).roles("MANAGER");
-//        auth.inMemoryAuthentication().withUser("admin").password(password).roles("ADMIN");
-//    }
+    @Bean
+    public AccessDeniedHandler customAccessDeniedHandler() {
+        CustomAccessDeniedHandler customAccessDeniedHandler = new CustomAccessDeniedHandler();
+        customAccessDeniedHandler.setErrorPage("/denied");
+        return customAccessDeniedHandler;
+    }
 
 }
