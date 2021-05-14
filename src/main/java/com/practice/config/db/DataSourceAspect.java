@@ -9,6 +9,12 @@ import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.stereotype.Component;
 
+/**
+ * @author  : anthony.son
+ * @since   : 2021. 05
+ * @version : 1.0
+ */
+
 import java.lang.reflect.Method;
 
 @Component

@@ -1,5 +1,11 @@
 package com.practice.config.security;
 
+/**
+ * @author  : anthony.son
+ * @since   : 2021. 05
+ * @version : 1.0
+ */
+
 import com.practice.account.service.AccountContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;

@@ -1,5 +1,11 @@
 package com.practice.config.security;
 
+/**
+ * @author  : anthony.son
+ * @since   : 2021. 05
+ * @version : 1.0
+ */
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Bean;

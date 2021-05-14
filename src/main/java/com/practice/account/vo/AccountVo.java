@@ -1,5 +1,11 @@
 package com.practice.account.vo;
 
+/**
+ * @author  : anthony.son
+ * @since   : 2021. 05
+ * @version : 1.0
+ */
+
 import lombok.*;
 
 @Getter

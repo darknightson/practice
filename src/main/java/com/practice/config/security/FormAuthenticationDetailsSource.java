@@ -1,5 +1,11 @@
 package com.practice.config.security;
 
+/**
+ * @author  : anthony.son
+ * @since   : 2021. 05
+ * @version : 1.0
+ */
+
 import org.springframework.security.authentication.AuthenticationDetailsSource;
 import org.springframework.security.web.authentication.WebAuthenticationDetails;
 import org.springframework.stereotype.Component;
