@@ -13,7 +13,8 @@ public class AccountService {
     private final AccountDao accountDao;
 
     @Transactional
-    public void createUser(AccountVo accountVo) {
-        accountDao.createUser(accountVo);
+    public void createAccount(AccountVo accountVo) {
+        accountDao.createAccount(accountVo);
     }
 }
+

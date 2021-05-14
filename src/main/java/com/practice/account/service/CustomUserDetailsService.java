@@ -24,13 +24,14 @@ public class CustomUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String userId) throws UsernameNotFoundException {
-        AccountVo accountVo = accountDao.selectUserId(userId);
+        AccountVo accountVo = accountDao.selectAccountId(userId);
 
         if ( accountVo == null ) {
             throw  new UsernameNotFoundException("usernameNotFoundException");
         }
         List<GrantedAuthority> roles = new ArrayList<>();
-        roles.add(new SimpleGrantedAuthority(accountVo.getRole()));
+        //roles.add(new SimpleGrantedAuthority(accountVo.getRole()));
+        roles.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
         AccountContext accountContext = new AccountContext(accountVo, roles);
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         return accountContext;

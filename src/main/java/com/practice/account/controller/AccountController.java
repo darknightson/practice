@@ -33,7 +33,7 @@ public class AccountController {
     @PostMapping("/account")
     public String createAccount(AccountVo accountVo) {
         accountVo.setPassword(passwordEncoder.encode(accountVo.getPassword()));
-        accountService.createUser(accountVo);
+        accountService.createAccount(accountVo);
         return "redirect:/";
     }
 

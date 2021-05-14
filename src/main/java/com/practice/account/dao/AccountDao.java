@@ -5,8 +5,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface AccountDao {
-
-    void createUser(AccountVo accountVo);
-
-    AccountVo selectUserId(String userId);
+    void createAccount(AccountVo accountVo);
+    AccountVo selectAccountId(String userId);
 }
